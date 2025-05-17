@@ -1,1 +1,122 @@
-<!DOCTYPE html><html><body><h1>Reviews Page</h1></body></html>
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reviews - Uhuru Lifestyle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            braai: "#B91C1C",
+            salon: "#C026D3",
+            carwash: "#2563EB",
+            accent: "#F9FAFB"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-accent text-gray-800 dark:bg-gray-900 dark:text-white transition duration-500">
+
+  <header class="bg-gradient-to-r from-braai via-salon to-carwash text-white p-6 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Customer Reviews</h1>
+      <a href="index.html" class="text-sm underline hover:text-yellow-300">Back to Home</a>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-10">
+    <h2 class="text-3xl font-bold mb-6 text-center">We'd love your feedback!</h2>
+
+    <!-- Review Form -->
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md max-w-2xl mx-auto mb-10">
+      <form id="reviewForm" class="space-y-4">
+        <div>
+          <label for="service" class="block mb-1 font-semibold">Which service are you reviewing?</label>
+          <select id="service" class="w-full border rounded px-3 py-2 dark:bg-gray-700">
+            <option value="Braai">Braai</option>
+            <option value="Salon">Salon</option>
+            <option value="Carwash">Carwash</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block mb-1 font-semibold">Your Rating:</label>
+          <div class="flex space-x-1 text-yellow-400 text-2xl" id="starRating">
+            <button type="button" data-rating="1">★</button>
+            <button type="button" data-rating="2">★</button>
+            <button type="button" data-rating="3">★</button>
+            <button type="button" data-rating="4">★</button>
+            <button type="button" data-rating="5">★</button>
+          </div>
+        </div>
+
+        <div>
+          <label for="comment" class="block mb-1 font-semibold">Your Comment:</label>
+          <textarea id="comment" class="w-full border rounded px-3 py-2 dark:bg-gray-700" rows="4" placeholder="Type your feedback..."></textarea>
+        </div>
+
+        <button type="submit" class="bg-carwash hover:bg-blue-600 text-white px-4 py-2 rounded">Submit Review</button>
+      </form>
+    </div>
+
+    <!-- Display Reviews -->
+    <div id="reviews" class="space-y-6 max-w-3xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-4">What others are saying:</h3>
+      <!-- Reviews will appear here -->
+    </div>
+  </main>
+
+  <footer class="bg-yellow-100 dark:bg-gray-800 text-center py-4 text-sm mt-10">
+    &copy; 2025 Uhuru Lifestyle - Braai • Salon • Carwash
+  </footer>
+
+  <script>
+    let selectedRating = 0;
+
+    // Star rating logic
+    document.querySelectorAll("#starRating button").forEach(star => {
+      star.addEventListener("click", () => {
+        selectedRating = parseInt(star.getAttribute("data-rating"));
+        document.querySelectorAll("#starRating button").forEach(s => {
+          s.textContent = parseInt(s.getAttribute("data-rating")) <= selectedRating ? "★" : "☆";
+        });
+      });
+    });
+
+    // Handle form submission
+    document.getElementById("reviewForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const service = document.getElementById("service").value;
+      const comment = document.getElementById("comment").value;
+      const reviewsContainer = document.getElementById("reviews");
+
+      if (!selectedRating || !comment.trim()) {
+        alert("Please provide a rating and a comment.");
+        return;
+      }
+
+      const reviewCard = document.createElement("div");
+      reviewCard.className = "bg-white dark:bg-gray-800 p-4 rounded shadow";
+
+      reviewCard.innerHTML = `
+        <h4 class="font-bold text-lg mb-1">${service}</h4>
+        <div class="text-yellow-400 mb-2">${"★".repeat(selectedRating)}${"☆".repeat(5 - selectedRating)}</div>
+        <p class="text-gray-700 dark:text-gray-300">${comment}</p>
+      `;
+
+      reviewsContainer.appendChild(reviewCard);
+
+      // Reset form
+      selectedRating = 0;
+      document.querySelectorAll("#starRating button").forEach(s => s.textContent = "☆");
+      document.getElementById("reviewForm").reset();
+    });
+  </script>
+</body>
+</html>
