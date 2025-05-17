@@ -1,75 +1,108 @@
 <!DOCTYPE html>
 <html lang="en" class="transition-colors duration-500">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Uhuru-Lifestyle</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: '#1E3A8A',
-              accent: '#E0F2FE',
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Uhuru-Lifestyle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E3A8A',
+            accent: '#E0F2FE',
+          },
+          animation: {
+            fadeIn: "fadeIn 1.5s ease-in-out",
+            slideUp: "slideUp 1s ease-in-out",
+            bounceIn: "bounceIn 1s ease",
+            spinSlow: "spin 10s linear infinite"
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' }
             },
-            animation: {
-              fadeIn: "fadeIn 1.5s ease-in-out",
-              slideUp: "slideUp 1s ease-in-out",
-              bounceIn: "bounceIn 1s ease"
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
             },
-            keyframes: {
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' }
-              },
-              slideUp: {
-                '0%': { transform: 'translateY(20px)', opacity: '0' },
-                '100%': { transform: 'translateY(0)', opacity: '1' }
-              },
-              bounceIn: {
-                '0%': { transform: 'scale(0.9)', opacity: '0' },
-                '50%': { transform: 'scale(1.05)', opacity: '1' },
-                '100%': { transform: 'scale(1)' }
-              }
+            bounceIn: {
+              '0%': { transform: 'scale(0.9)', opacity: '0' },
+              '50%': { transform: 'scale(1.05)', opacity: '1' },
+              '100%': { transform: 'scale(1)' }
             }
           }
         }
       }
+    }
 
-      function toggleDarkMode() {
-        document.documentElement.classList.toggle('dark');
-      }
-    </script>
-  </head>
-  <body class="bg-accent text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
-    <header class="bg-primary text-white py-6 shadow-md animate-fadeIn">
-      <div class="container mx-auto px-4 flex justify-between items-center">
-        <div class="flex items-center space-x-4">
-          <img src="Logo 1.png" alt="Logo" class="rounded-full w-14 h-14">
-          <h1 class="text-3xl font-bold tracking-wide">Uhuru-Lifestyle</h1>
+    function toggleDarkMode() {
+      const html = document.documentElement;
+      html.classList.add('transition-colors', 'duration-700');
+      html.classList.toggle('dark');
+    }
+  </script>
+</head>
+<body class="bg-accent text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+
+  <!-- Layout -->
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar Navigation -->
+    <aside class="w-64 bg-primary text-white flex flex-col justify-between py-6 px-4 shadow-lg animate-slideUp">
+      <div>
+        <div class="flex items-center mb-6">
+          <img src="logo1.png" alt="Logo" class="w-12 h-12 rounded-full mr-3 animate-bounce"/>
+          <h1 class="text-2xl font-bold">Uhuru-Lifestyle</h1>
         </div>
-        <div>
-          <button onclick="toggleDarkMode()" class="px-3 py-1 bg-yellow-400 text-black rounded-full hover:bg-yellow-300 transition">Toggle Dark Mode</button>
+        <nav class="space-y-4 mt-10">
+          <a href="menu.html" class="block hover:text-yellow-300 transition">Menu</a>
+          <a href="salon.html" class="block hover:text-yellow-300 transition">Salon</a>
+          <a href="carwash.html" class="block hover:text-yellow-300 transition">Car Wash</a>
+          <a href="contact.html" class="block hover:text-yellow-300 transition">Contact</a>
+          <a href="reviews.html" class="block hover:text-yellow-300 transition">Reviews</a>
+        </nav>
+      </div>
+
+      <button onclick="toggleDarkMode()" class="mt-10 px-4 py-2 bg-yellow-400 text-black rounded-full hover:bg-yellow-300 transition duration-300 animate-bounceIn">
+        Toggle Dark Mode
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 px-10 py-8 animate-fadeIn">
+      <h2 class="text-3xl font-semibold mb-4 animate-slideUp">Welcome to Uhuru-Lifestyle</h2>
+      <p class="text-lg mb-8 animate-fadeIn delay-200">Your One-Stop Spot for Shisanyama, Salon & Car Wash Services</p>
+
+      <!-- Image Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src="braids.jpg" alt="Salon" class="rounded w-full h-40 object-cover mb-3 animate-fadeIn"/>
+          <p class="text-center font-semibold">Our Stylish Salon</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src="Logo 1.png" alt="Logo" class="rounded w-full h-40 object-cover mb-3 animate-bounceIn"/>
+          <p class="text-center font-semibold">Our Brand</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src="car.jpg" alt="Car Wash" class="rounded w-full h-40 object-cover mb-3 animate-fadeIn"/>
+          <p class="text-center font-semibold">Clean Car, Clean You</p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+          <img src="nyama.jpg" alt="Braai" class="rounded w-full h-40 object-cover mb-3 animate-fadeIn"/>
+          <p class="text-center font-semibold">Authentic Shisanyama Vibes</p>
         </div>
       </div>
-      <nav class="mt-4 text-center space-x-4">
-        <a href="menu.html" class="hover:underline text-yellow-300">Menu</a>
-        <a href="salon.html" class="hover:underline">Salon</a>
-        <a href="carwash.html" class="hover:underline">Car Wash</a>
-        <a href="contact.html" class="hover:underline">Contact</a>
-        <a href="reviews.html" class="hover:underline">Reviews</a>
-      </nav>
-    </header>
-
-    <main class="container mx-auto px-4 py-10 text-center animate-slideUp">
-      <h2 class="text-2xl font-semibold mb-4">Welcome to Uhuru-Lifestyle</h2>
-      <p class="text-lg">Your One-Stop Spot for Shisanyama, Salon & Car Wash Services</p>
     </main>
+  </div>
 
-    <footer class="bg-blue-100 dark:bg-gray-800 text-center py-4 mt-10 text-sm animate-fadeIn">
-      &copy; 2025 Uhuru-Lifestyle. All rights reserved.
-    </footer>
-  </body>
+  <!-- Footer -->
+  <footer class="bg-blue-100 dark:bg-gray-800 text-center py-4 text-sm mt-10 animate-fadeIn">
+    &copy; 2025 Uhuru-Lifestyle. All rights reserved.
+  </footer>
+
+</body>
 </html>
