@@ -1,1 +1,115 @@
-<!DOCTYPE html><html><body><h1>Salon Page</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Salon Services - Uhuru Lifestyle</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            salon: "#D946EF", // Vibrant pink
+            accent: "#FDF2F8"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-accent text-gray-800 dark:bg-gray-900 dark:text-white transition duration-500">
+
+  <!-- Header -->
+  <header class="bg-salon text-white p-6 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Salon Services</h1>
+      <a href="index.html" class="text-sm underline hover:text-yellow-300">Home</a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-10">
+
+    <!-- Ladies Styles -->
+    <section>
+      <h2 class="text-3xl font-bold mb-6 text-salon">Ladies Braids</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Braid Card -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200?text=Box+Braids" alt="Box Braids" class="rounded mb-3 w-full object-cover h-48">
+          <h3 class="font-semibold text-lg">Box Braids</h3>
+          <p class="text-salon font-bold">R300</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200?text=Cornrows" alt="Cornrows" class="rounded mb-3 w-full object-cover h-48">
+          <h3 class="font-semibold text-lg">Cornrows</h3>
+          <p class="text-salon font-bold">R200</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200?text=Knotless+Braids" alt="Knotless Braids" class="rounded mb-3 w-full object-cover h-48">
+          <h3 class="font-semibold text-lg">Knotless Braids</h3>
+          <p class="text-salon font-bold">R350</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200?text=Twist+Braids" alt="Twist Braids" class="rounded mb-3 w-full object-cover h-48">
+          <h3 class="font-semibold text-lg">Twist Braids</h3>
+          <p class="text-salon font-bold">R280</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200?text=Goddess+Braids" alt="Goddess Braids" class="rounded mb-3 w-full object-cover h-48">
+          <h3 class="font-semibold text-lg">Goddess Braids</h3>
+          <p class="text-salon font-bold">R320</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200?text=Fulani+Braids" alt="Fulani Braids" class="rounded mb-3 w-full object-cover h-48">
+          <h3 class="font-semibold text-lg">Fulani Braids</h3>
+          <p class="text-salon font-bold">R340</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Men's Haircuts -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-bold mb-6 text-salon">Men’s Haircuts</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
+        <!-- Haircut Card -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200?text=Fade+Cut" alt="Fade Cut" class="rounded mb-3 w-full object-cover h-48">
+          <h3 class="font-semibold text-lg">Fade Cut</h3>
+          <p class="text-salon font-bold">R50</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200?text=Buzz+Cut" alt="Buzz Cut" class="rounded mb-3 w-full object-cover h-48">
+          <h3 class="font-semibold text-lg">Buzz Cut</h3>
+          <p class="text-salon font-bold">R40</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200?text=Line+Up" alt="Line Up" class="rounded mb-3 w-full object-cover h-48">
+          <h3 class="font-semibold text-lg">Line Up</h3>
+          <p class="text-salon font-bold">R30</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
+          <img src="https://via.placeholder.com/300x200?text=Classic+Cut" alt="Classic Cut" class="rounded mb-3 w-full object-cover h-48">
+          <h3 class="font-semibold text-lg">Classic Cut</h3>
+          <p class="text-salon font-bold">R60</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-pink-100 dark:bg-gray-800 text-center py-4 text-sm mt-10">
+    &copy; 2025 Uhuru Lifestyle. All rights reserved.
+  </footer>
+
+</body>
+</html>
