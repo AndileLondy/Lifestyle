@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uhuru-Lifestyle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1E3A8A',
+              accent: '#E0F2FE',
+            },
+            animation: {
+              fadeIn: "fadeIn 1.5s ease-in-out",
+              slideUp: "slideUp 1s ease-in-out",
+              bounceIn: "bounceIn 1s ease"
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' }
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' }
+              },
+              bounceIn: {
+                '0%': { transform: 'scale(0.9)', opacity: '0' },
+                '50%': { transform: 'scale(1.05)', opacity: '1' },
+                '100%': { transform: 'scale(1)' }
+              }
+            }
+          }
+        }
+      }
+
+      function toggleDarkMode() {
+        document.documentElement.classList.toggle('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-accent text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+    <header class="bg-primary text-white py-6 shadow-md animate-fadeIn">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center space-x-4">
+          <img src="https://via.placeholder.com/60" alt="Logo" class="rounded-full w-14 h-14">
+          <h1 class="text-3xl font-bold tracking-wide">Uhuru-Lifestyle</h1>
+        </div>
+        <div>
+          <button onclick="toggleDarkMode()" class="px-3 py-1 bg-yellow-400 text-black rounded-full hover:bg-yellow-300 transition">Toggle Dark Mode</button>
+        </div>
+      </div>
+      <nav class="mt-4 text-center space-x-4">
+        <a href="menu.html" class="hover:underline text-yellow-300">Menu</a>
+        <a href="salon.html" class="hover:underline">Salon</a>
+        <a href="carwash.html" class="hover:underline">Car Wash</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+        <a href="reviews.html" class="hover:underline">Reviews</a>
+      </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-10 text-center animate-slideUp">
+      <h2 class="text-2xl font-semibold mb-4">Welcome to Uhuru-Lifestyle</h2>
+      <p class="text-lg">Your One-Stop Spot for Shisanyama, Salon & Car Wash Services</p>
+    </main>
+
+    <footer class="bg-blue-100 dark:bg-gray-800 text-center py-4 mt-10 text-sm animate-fadeIn">
+      &copy; 2025 Uhuru-Lifestyle. All rights reserved.
+    </footer>
+  </body>
+</html>
