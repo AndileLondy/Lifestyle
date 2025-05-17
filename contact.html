@@ -1,1 +1,53 @@
-<!DOCTYPE html><html><body><h1>Contact Page</h1></body></html>
+<!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Uhuru Lifestyle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#1E3A8A',
+              accent: '#E0F2FE'
+            },
+          },
+        },
+      };
+    </script>
+    <script src="https://unpkg.com/feather-icons"></script>
+  </head>
+  <body class="bg-accent text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <div class="min-h-screen flex flex-col items-center justify-center p-6">
+      <h1 class="text-4xl font-bold mb-8 text-primary">Contact Us</h1>
+
+      <div class="space-y-6 w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <div class="flex items-center space-x-4">
+          <i data-feather="phone" class="text-primary"></i>
+          <span class="font-medium">Cell: <a href="tel:+27672671157" class="text-blue-700 hover:underline">+27 67 267 1157</a></span>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <i data-feather="message-circle" class="text-green-600"></i>
+          <span class="font-medium">WhatsApp: <a href="https://wa.me/27672671157" target="_blank" class="text-green-600 hover:underline">Chat Now</a></span>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <i data-feather="facebook" class="text-blue-600"></i>
+          <span class="font-medium">Facebook: <a href="https://facebook.com/yourpage" target="_blank" class="hover:underline">Visit Page</a></span>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <i data-feather="instagram" class="text-pink-600"></i>
+          <span class="font-medium">Instagram: <a href="https://instagram.com/yourpage" target="_blank" class="hover:underline">@uhuru_lifestyle</a></span>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
