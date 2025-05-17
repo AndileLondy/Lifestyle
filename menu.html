@@ -1,1 +1,97 @@
-<!DOCTYPE html><html><body><h1>Menu Page</h1></body></html>
+<!DOCTYPE html><html><body><h1>Menu Page</h1></body></html><!DOCTYPE html>
+<html lang="en" class="transition-colors duration-500">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - Uhuru Lifestyle</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#B91C1C', // Rich red
+              accent: '#FFF7ED',  // Warm background
+            },
+            animation: {
+              fadeIn: "fadeIn 1.5s ease-in-out",
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0, transform: 'translateY(20px)' },
+                '100%': { opacity: 1, transform: 'translateY(0)' },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-accent text-gray-800 dark:bg-gray-900 dark:text-white transition duration-500">
+
+    <header class="bg-primary text-white p-6 shadow-md">
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold">Uhuru Menu</h1>
+        <a href="index.html" class="text-sm underline hover:text-yellow-300">Back to Home</a>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-10">
+      <h2 class="text-3xl font-bold mb-8 text-primary text-center animate-fadeIn">Our Delicious Dishes</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Menu Item 1 -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
+          <img src="https://via.placeholder.com/300x200?text=Braai+Plate" alt="Braai Plate" class="rounded-md mb-4 w-full h-48 object-cover" />
+          <h3 class="text-xl font-semibold">Braai Plate</h3>
+          <p class="text-gray-600 dark:text-gray-300">Beef, wors, and pap served hot off the grill.</p>
+          <p class="text-red-600 font-bold mt-2">R80</p>
+        </div>
+
+        <!-- Menu Item 2 -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition duration-300">
+          <img src="https://via.placeholder.com/300x200?text=Chicken+Wings" alt="Chicken Wings" class="rounded-md mb-4 w-full h-48 object-cover" />
+          <h3 class="text-xl font-semibold">Chicken Wings</h3>
+          <p class="text-gray-600 dark:text-gray-300">Spicy grilled wings with a smoky finish.</p>
+          <p class="text-red-600 font-bold mt-2">R60</p>
+        </div>
+
+        <!-- Menu Item 3 -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition duration-300">
+          <img src="https://via.placeholder.com/300x200?text=Burger+Combo" alt="Burger Combo" class="rounded-md mb-4 w-full h-48 object-cover" />
+          <h3 class="text-xl font-semibold">Burger Combo</h3>
+          <p class="text-gray-600 dark:text-gray-300">Beef burger, chips & a cold drink.</p>
+          <p class="text-red-600 font-bold mt-2">R90</p>
+        </div>
+
+        <!-- Menu Item 4 -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition duration-300">
+          <img src="https://via.placeholder.com/300x200?text=Pap+&+Stew" alt="Pap & Stew" class="rounded-md mb-4 w-full h-48 object-cover" />
+          <h3 class="text-xl font-semibold">Pap & Stew</h3>
+          <p class="text-gray-600 dark:text-gray-300">Savory beef stew with soft pap.</p>
+          <p class="text-red-600 font-bold mt-2">R70</p>
+        </div>
+
+        <!-- Menu Item 5 -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition duration-300">
+          <img src="https://via.placeholder.com/300x200?text=Grilled+Boerewors" alt="Grilled Boerewors" class="rounded-md mb-4 w-full h-48 object-cover" />
+          <h3 class="text-xl font-semibold">Grilled Boerewors</h3>
+          <p class="text-gray-600 dark:text-gray-300">South African classic grilled to perfection.</p>
+          <p class="text-red-600 font-bold mt-2">R45</p>
+        </div>
+
+        <!-- Menu Item 6 -->
+        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition duration-300">
+          <img src="https://via.placeholder.com/300x200?text=Veggie+Platter" alt="Veggie Platter" class="rounded-md mb-4 w-full h-48 object-cover" />
+          <h3 class="text-xl font-semibold">Veggie Platter</h3>
+          <p class="text-gray-600 dark:text-gray-300">Grilled seasonal vegetables and pap.</p>
+          <p class="text-red-600 font-bold mt-2">R65</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-yellow-100 dark:bg-gray-800 text-center py-4 text-sm mt-10">
+      &copy; 2025 Uhuru Lifestyle - Food & Vibes
+    </footer>
+  </body>
+</html>
