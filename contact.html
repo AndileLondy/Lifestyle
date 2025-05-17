@@ -7,11 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
               primary: '#1E3A8A',
-              accent: '#E0F2FE'
+              accent: '#E0F2FE',
             },
           },
         },
@@ -19,33 +20,83 @@
     </script>
     <script src="https://unpkg.com/feather-icons"></script>
   </head>
-  <body class="bg-accent text-gray-900 dark:bg-gray-900 dark:text-gray-100">
-    <div class="min-h-screen flex flex-col items-center justify-center p-6">
-      <h1 class="text-4xl font-bold mb-8 text-primary">Contact Us</h1>
+  <body class="bg-accent text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+    <!-- Navigation -->
+    <header class="bg-primary text-white py-4 shadow-md">
+      <div class="container mx-auto flex justify-between items-center px-6">
+        <h1 class="text-2xl font-bold">Uhuru Lifestyle</h1>
+        <nav class="space-x-4 text-sm md:text-base">
+          <a href="index.html" class="hover:underline">Home</a>
+          <a href="menu.html" class="hover:underline">Menu</a>
+          <a href="salon.html" class="hover:underline">Salon</a>
+          <a href="carwash.html" class="hover:underline">Car Wash</a>
+          <a href="reviews.html" class="hover:underline">Reviews</a>
+        </nav>
+      </div>
+    </header>
 
-      <div class="space-y-6 w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-        <div class="flex items-center space-x-4">
-          <i data-feather="phone" class="text-primary"></i>
-          <span class="font-medium">Cell: <a href="tel:+27672671157" class="text-blue-700 hover:underline">+27 67 267 1157</a></span>
-        </div>
+    <!-- Contact Content -->
+    <main class="min-h-screen flex flex-col items-center justify-center p-6">
+      <h2 class="text-4xl font-bold mb-8 text-primary text-center">Contact Us</h2>
 
-        <div class="flex items-center space-x-4">
-          <i data-feather="message-circle" class="text-green-600"></i>
-          <span class="font-medium">WhatsApp: <a href="https://wa.me/27672671157" target="_blank" class="text-green-600 hover:underline">Chat Now</a></span>
-        </div>
+      <div class="w-full max-w-2xl bg-white dark:bg-gray-800 rounded-lg shadow-xl p-8 border-2 border-primary">
+        <div class="space-y-6 text-lg">
+          <div class="flex items-center space-x-4">
+            <i data-feather="phone" class="text-primary"></i>
+            <span class="font-medium">Cell: 
+              <a href="tel:+27672671157" class="text-blue-700 hover:underline">
+                +27 67 267 1157
+              </a>
+            </span>
+          </div>
 
-        <div class="flex items-center space-x-4">
-          <i data-feather="facebook" class="text-blue-600"></i>
-          <span class="font-medium">Facebook: <a href="https://facebook.com/yourpage" target="_blank" class="hover:underline">Visit Page</a></span>
-        </div>
+          <div class="flex items-center space-x-4">
+            <i data-feather="message-circle" class="text-green-600"></i>
+            <span class="font-medium">WhatsApp: 
+              <a href="https://wa.me/27672671157" target="_blank" class="text-green-600 hover:underline">
+                Chat Now
+              </a>
+            </span>
+          </div>
 
-        <div class="flex items-center space-x-4">
-          <i data-feather="instagram" class="text-pink-600"></i>
-          <span class="font-medium">Instagram: <a href="https://instagram.com/yourpage" target="_blank" class="hover:underline">@uhuru_lifestyle</a></span>
+          <div class="flex items-center space-x-4">
+            <i data-feather="facebook" class="text-blue-600"></i>
+            <span class="font-medium">Facebook: 
+              <a href="https://facebook.com/yourpage" target="_blank" class="hover:underline">
+                Visit Page
+              </a>
+            </span>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <i data-feather="instagram" class="text-pink-600"></i>
+            <span class="font-medium">Instagram: 
+              <a href="https://instagram.com/yourpage" target="_blank" class="hover:underline">
+                @uhuru_lifestyle
+              </a>
+            </span>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <i data-feather="map-pin" class="text-red-500"></i>
+            <span class="font-medium">Address: 
+              <a href="https://www.google.com/maps?q=123+Uhuru+Street,+Johannesburg,+South+Africa" 
+                 target="_blank" 
+                 class="text-red-600 hover:underline">
+                123 Uhuru Street, Lifestyle Zone, Johannesburg, South Africa
+              </a>
+            </span>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
 
+    <!-- Footer -->
+    <footer class="bg-blue-100 dark:bg-gray-800 text-center py-4 mt-10 text-sm text-gray-700 dark:text-gray-300">
+      &copy; 2025 Uhuru-Lifestyle. All rights reserved.
+    </footer>
+
+    <!-- Icons -->
     <script>
       feather.replace();
     </script>
