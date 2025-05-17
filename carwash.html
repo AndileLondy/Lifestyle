@@ -7,10 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             colors: {
-              primary: '#1E40AF', // Blue car wash vibe
+              primary: '#1E40AF',
               accent: '#EFF6FF',
             },
             animation: {
@@ -29,68 +30,72 @@
   </head>
   <body class="bg-accent text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-500">
 
-    <header class="bg-primary text-white p-6 shadow-md">
-      <div class="container mx-auto flex justify-between items-center">
-        <h1 class="text-2xl font-bold">Uhuru Car Wash</h1>
-        <a href="index.html" class="text-sm underline hover:text-yellow-300">Back to Home</a>
-      </div>
-    </header>
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside class="w-64 bg-primary text-white p-6 flex flex-col space-y-6 fixed sm:relative sm:h-auto sm:top-0 sm:left-0 sm:w-64">
+        <h1 class="text-2xl font-bold mb-4">Uhuru Lifestyle</h1>
+        <nav class="space-y-4 text-sm">
+          <a href="index.html" class="block hover:text-yellow-300">🏠 Home</a>
+          <a href="carwash.html" class="block font-semibold text-yellow-300">🚗 Car Wash</a>
+          <a href="salon.html" class="block hover:text-yellow-300">💇 Salon</a>
+          <a href="menu.html" class="block hover:text-yellow-300">🍽️ Restaurant</a>
+          <a href="reviews.html" class="block hover:text-yellow-300">⭐ Reviews</a>
+        </nav>
+      </aside>
 
-    <main class="container mx-auto px-4 py-10">
-      <h2 class="text-3xl font-bold mb-8 text-primary text-center animate-fadeIn">Our Car Wash Services</h2>
+      <!-- Main Content -->
+      <main class="flex-1 ml-64 p-6">
+        <h2 class="text-3xl font-bold mb-8 text-primary text-center animate-fadeIn">Our Car Wash Services</h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card 1 -->
-        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
-          <img src="car.jpg" alt="Exterior Wash" class="rounded-md mb-4 w-full h-48 object-cover" />
-          <h3 class="text-xl font-semibold">Exterior Wash</h3>
-          <p class="text-gray-600 dark:text-gray-300">Hand wash with pressure rinse and shine.</p>
-          <p class="text-blue-600 font-bold mt-2">R50</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card Template -->
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
+            <img src="car.jpg" alt="Exterior Wash" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold">Exterior Wash</h3>
+            <p class="text-gray-600 dark:text-gray-300">Hand wash with pressure rinse and shine.</p>
+            <p class="text-blue-600 font-bold mt-2">R50</p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
+            <img src="car.jpg" alt="Interior Cleaning" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold">Interior Cleaning</h3>
+            <p class="text-gray-600 dark:text-gray-300">Dashboard, seats & vacuum.</p>
+            <p class="text-blue-600 font-bold mt-2">R70</p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
+            <img src="car.jpg" alt="Full Wash" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold">Full Wash</h3>
+            <p class="text-gray-600 dark:text-gray-300">Interior + Exterior deep clean.</p>
+            <p class="text-blue-600 font-bold mt-2">R100</p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
+            <img src="car.jpg" alt="Engine Wash" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold">Engine Wash</h3>
+            <p class="text-gray-600 dark:text-gray-300">Degreasing and rinse with care.</p>
+            <p class="text-blue-600 font-bold mt-2">R80</p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
+            <img src="car.jpg" alt="Tyre Shine" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold">Tyre Shine</h3>
+            <p class="text-gray-600 dark:text-gray-300">Gloss finish for your wheels.</p>
+            <p class="text-blue-600 font-bold mt-2">R30</p>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
+            <img src="car.jpg" alt="VIP Detailing" class="rounded-md mb-4 w-full h-48 object-cover" />
+            <h3 class="text-xl font-semibold">VIP Detailing</h3>
+            <p class="text-gray-600 dark:text-gray-300">Full valet + polish and wax.</p>
+            <p class="text-blue-600 font-bold mt-2">R250</p>
+          </div>
         </div>
+      </main>
+    </div>
 
-        <!-- Card 2 -->
-        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
-          <img src="car.jpg" alt="Interior Cleaning" class="rounded-md mb-4 w-full h-48 object-cover" />
-          <h3 class="text-xl font-semibold">Interior Cleaning</h3>
-          <p class="text-gray-600 dark:text-gray-300">Dashboard, seats & vacuum.</p>
-          <p class="text-blue-600 font-bold mt-2">R70</p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
-          <img src="car.jpg" alt="Full Wash" class="rounded-md mb-4 w-full h-48 object-cover" />
-          <h3 class="text-xl font-semibold">Full Wash</h3>
-          <p class="text-gray-600 dark:text-gray-300">Interior + Exterior deep clean.</p>
-          <p class="text-blue-600 font-bold mt-2">R100</p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
-          <img src=car.jpg" alt="Engine Wash" class="rounded-md mb-4 w-full h-48 object-cover" />
-          <h3 class="text-xl font-semibold">Engine Wash</h3>
-          <p class="text-gray-600 dark:text-gray-300">Degreasing and rinse with care.</p>
-          <p class="text-blue-600 font-bold mt-2">R80</p>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
-          <img src="car.jpg" alt="Tyre Shine" class="rounded-md mb-4 w-full h-48 object-cover" />
-          <h3 class="text-xl font-semibold">Tyre Shine</h3>
-          <p class="text-gray-600 dark:text-gray-300">Gloss finish for your wheels.</p>
-          <p class="text-blue-600 font-bold mt-2">R30</p>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
-          <img src="car.jpg" alt="VIP Detailing" class="rounded-md mb-4 w-full h-48 object-cover" />
-          <h3 class="text-xl font-semibold">VIP Detailing</h3>
-          <p class="text-gray-600 dark:text-gray-300">Full valet + polish and wax.</p>
-          <p class="text-blue-600 font-bold mt-2">R250</p>
-        </div>
-      </div>
-    </main>
-
-    <footer class="bg-blue-100 dark:bg-gray-800 text-center py-4 text-sm mt-10">
+    <!-- Footer -->
+    <footer class="bg-blue-100 dark:bg-gray-800 text-center py-4 text-sm mt-10 ml-64">
       &copy; 2025 Uhuru Lifestyle - Car Wash Division
     </footer>
   </body>
