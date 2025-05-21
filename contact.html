@@ -19,17 +19,32 @@
       };
     </script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+      }
+    </script>
   </head>
   <body class="bg-accent text-gray-900 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-500">
+
     <!-- Header -->
     <header class="bg-primary text-white py-4 shadow-md">
       <div class="container mx-auto flex justify-between items-center px-6">
         <h1 class="text-2xl font-bold">Uhuru Lifestyle</h1>
+        <button class="sm:hidden" onclick="toggleMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+               viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
       </div>
     </header>
 
     <!-- Navigation -->
-    <nav class="container mx-auto mt-6 px-6 space-y-2 text-sm max-w-xs">
+    <nav id="mobileMenu"
+         class="sm:flex sm:justify-center sm:space-x-6 sm:mt-6 px-6 mt-4 space-y-2 text-sm max-w-xs sm:max-w-none sm:space-y-0 hidden sm:block">
       <a href="index.html" class="block hover:text-yellow-300">🏠 Home</a>
       <a href="carwash.html" class="block hover:text-yellow-300">🚗 Car Wash</a>
       <a href="salon.html" class="block hover:text-yellow-300">💇 Salon</a>
@@ -98,7 +113,7 @@
       &copy; 2025 Uhuru Lifestyle. All rights reserved.
     </footer>
 
-    <!-- Icons -->
+    <!-- Feather Icons -->
     <script>
       feather.replace();
     </script>
