@@ -27,13 +27,30 @@
         },
       };
     </script>
+    <script>
+      function toggleSidebar() {
+        document.getElementById('sidebar').classList.toggle('hidden');
+      }
+    </script>
   </head>
   <body class="bg-accent text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-500">
 
-    <div class="flex min-h-screen">
+    <!-- Header -->
+    <header class="bg-primary text-white p-4 sm:hidden flex justify-between items-center">
+      <h1 class="text-xl font-bold">Uhuru Lifestyle</h1>
+      <button onclick="toggleSidebar()" aria-label="Toggle menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </header>
+
+    <div class="flex flex-col sm:flex-row min-h-screen">
       <!-- Sidebar -->
-      <aside class="w-64 bg-primary text-white p-6 flex flex-col space-y-6 fixed sm:relative sm:h-auto sm:top-0 sm:left-0 sm:w-64">
-        <h1 class="text-2xl font-bold mb-4">Uhuru Lifestyle</h1>
+      <aside id="sidebar" class="bg-primary text-white p-6 space-y-6 sm:w-64 sm:block hidden fixed sm:relative w-full sm:h-auto z-10">
+        <h1 class="text-2xl font-bold">Uhuru Lifestyle</h1>
         <nav class="space-y-4 text-sm">
           <a href="index.html" class="block hover:text-yellow-300">🏠 Home</a>
           <a href="salon.html" class="block hover:text-yellow-300">💇 Salon</a>
@@ -44,11 +61,11 @@
       </aside>
 
       <!-- Main Content -->
-      <main class="flex-1 ml-64 p-6">
+      <main class="flex-1 sm:ml-64 p-6">
         <h2 class="text-3xl font-bold mb-8 text-primary text-center animate-fadeIn">Our Car Wash Services</h2>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card Template -->
+          <!-- Service Card Template -->
           <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
             <img src="car.jpg" alt="Exterior Wash" class="rounded-md mb-4 w-full h-48 object-cover" />
             <h3 class="text-xl font-semibold">Exterior Wash</h3>
@@ -95,7 +112,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-blue-100 dark:bg-gray-800 text-center py-4 text-sm mt-10 ml-64">
+    <footer class="bg-blue-100 dark:bg-gray-800 text-center py-4 text-sm mt-10 sm:ml-64">
       &copy; 2025 Uhuru Lifestyle - Car Wash Division
     </footer>
   </body>
