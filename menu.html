@@ -10,8 +10,8 @@
         theme: {
           extend: {
             colors: {
-              primary: '#B91C1C', // Rich red
-              accent: '#FFF7ED',  // Warm background
+              primary: '#B91C1C',
+              accent: '#FFF7ED',
             },
             animation: {
               fadeIn: "fadeIn 1.5s ease-in-out",
@@ -26,18 +26,32 @@
         },
       };
     </script>
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("mobileMenu");
+        menu.classList.toggle("hidden");
+      }
+    </script>
   </head>
   <body class="bg-accent text-gray-800 dark:bg-gray-900 dark:text-white transition duration-500">
 
+    <!-- Header with Hamburger -->
     <header class="bg-primary text-white p-6 shadow-md">
       <div class="container mx-auto flex justify-between items-center">
         <h1 class="text-2xl font-bold">Uhuru Menu</h1>
-        <a href="index.html" class="text-sm underline hover:text-yellow-300">Back to Home</a>
+        <button class="sm:hidden text-white" onclick="toggleMenu()">
+          <!-- Hamburger icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <a href="index.html" class="hidden sm:inline-block text-sm underline hover:text-yellow-300">Back to Home</a>
       </div>
     </header>
 
-    <!-- Navigation -->
-    <nav class="container mx-auto mt-6 px-4 space-y-2 text-sm">
+    <!-- Responsive Navigation -->
+    <nav id="mobileMenu" class="sm:flex sm:justify-center sm:space-x-6 sm:mt-6 px-4 space-y-2 text-sm mt-4 sm:space-y-0 hidden sm:block">
       <a href="index.html" class="block hover:text-yellow-300">🏠 Home</a>
       <a href="carwash.html" class="block hover:text-yellow-300">🚗 Car Wash</a>
       <a href="salon.html" class="block hover:text-yellow-300">💇 Salon</a>
@@ -45,11 +59,12 @@
       <a href="contact.html" class="block hover:text-yellow-300">📍 Location</a>
     </nav>
 
+    <!-- Main Content -->
     <main class="container mx-auto px-4 py-10">
       <h2 class="text-3xl font-bold mb-8 text-primary text-center animate-fadeIn">Our Delicious Dishes</h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Menu Item 1 -->
+        <!-- Menu Items -->
         <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transform transition duration-300">
           <img src="nyama.jpg" alt="Braai Plate" class="rounded-md mb-4 w-full h-48 object-cover" />
           <h3 class="text-xl font-semibold">Braai Plate</h3>
@@ -57,7 +72,6 @@
           <p class="text-red-600 font-bold mt-2">R80</p>
         </div>
 
-        <!-- Menu Item 2 -->
         <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition duration-300">
           <img src="nyama.jpg" alt="Chicken Wings" class="rounded-md mb-4 w-full h-48 object-cover" />
           <h3 class="text-xl font-semibold">Chicken Wings</h3>
@@ -65,7 +79,6 @@
           <p class="text-red-600 font-bold mt-2">R60</p>
         </div>
 
-        <!-- Menu Item 3 -->
         <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition duration-300">
           <img src="nyama.jpg" alt="Burger Combo" class="rounded-md mb-4 w-full h-48 object-cover" />
           <h3 class="text-xl font-semibold">Burger Combo</h3>
@@ -73,7 +86,6 @@
           <p class="text-red-600 font-bold mt-2">R90</p>
         </div>
 
-        <!-- Menu Item 4 -->
         <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition duration-300">
           <img src="nyama.jpg" alt="Pap & Stew" class="rounded-md mb-4 w-full h-48 object-cover" />
           <h3 class="text-xl font-semibold">Pap & Stew</h3>
@@ -81,7 +93,6 @@
           <p class="text-red-600 font-bold mt-2">R70</p>
         </div>
 
-        <!-- Menu Item 5 -->
         <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition duration-300">
           <img src="nyama.jpg" alt="Grilled Boerewors" class="rounded-md mb-4 w-full h-48 object-cover" />
           <h3 class="text-xl font-semibold">Grilled Boerewors</h3>
@@ -89,7 +100,6 @@
           <p class="text-red-600 font-bold mt-2">R45</p>
         </div>
 
-        <!-- Menu Item 6 -->
         <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition duration-300">
           <img src="nyama.jpg" alt="Veggie Platter" class="rounded-md mb-4 w-full h-48 object-cover" />
           <h3 class="text-xl font-semibold">Veggie Platter</h3>
@@ -99,8 +109,10 @@
       </div>
     </main>
 
+    <!-- Footer -->
     <footer class="bg-yellow-100 dark:bg-gray-800 text-center py-4 text-sm mt-10">
       &copy; 2025 Uhuru Lifestyle - Food & Vibes
     </footer>
+
   </body>
 </html>
