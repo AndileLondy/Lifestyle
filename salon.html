@@ -1,125 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="transition-colors duration-500">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Salon Services - Uhuru Lifestyle</title>
+  <title>Reviews - Uhuru Lifestyle</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
           colors: {
-            salon: "#D946EF", // Vibrant pink
-            accent: "#FDF2F8"
+            braai: "#B91C1C",
+            salon: "#C026D3",
+            carwash: "#2563EB",
+            accent: "#F9FAFB"
           }
         }
       }
     }
   </script>
+  <script>
+    function toggleNav() {
+      document.getElementById("mobileNav").classList.toggle("hidden");
+    }
+  </script>
 </head>
 <body class="bg-accent text-gray-800 dark:bg-gray-900 dark:text-white transition duration-500">
 
-  <!-- Layout wrapper -->
-  <div class="flex min-h-screen">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-braai via-salon to-carwash text-white p-6 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Customer Reviews</h1>
+      <button class="sm:hidden" onclick="toggleNav()" aria-label="Toggle menu">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <a href="index.html" class="hidden sm:inline-block text-sm underline hover:text-yellow-300">Back to Home</a>
+    </div>
+  </header>
 
-    <!-- Sidebar -->
-    <aside class="w-64 bg-salon text-white p-6 fixed sm:relative sm:h-auto sm:top-0 sm:left-0 sm:w-64">
-      <h1 class="text-2xl font-bold mb-6">Uhuru Lifestyle</h1>
-      <nav class="space-y-4 text-sm">
-        <a href="index.html" class="block hover:text-yellow-300">🏠 Home</a>
-        <a href="carwash.html" class="block hover:text-yellow-300">🚗 Car Wash</a>
-        <a href="menu.html" class="block hover:text-yellow-300">🍽️ Restaurant</a>
-        <a href="reviews.html" class="block hover:text-yellow-300">⭐ Reviews</a>
-        <a href="contact.html" class="block hover:text-yellow-300">📍 Location</a>
-      </nav>
-    </aside>
+  <!-- Responsive Nav -->
+  <nav id="mobileNav" class="sm:hidden bg-white dark:bg-gray-800 px-4 py-4 space-y-2 text-sm border-b dark:border-gray-700 hidden">
+    <a href="index.html" class="block hover:text-yellow-300">🏠 Home</a>
+    <a href="carwash.html" class="block hover:text-yellow-300">🚗 Car Wash</a>
+    <a href="salon.html" class="block hover:text-yellow-300">💇 Salon</a>
+    <a href="menu.html" class="block hover:text-yellow-300">🍽️ Restaurant</a>
+    <a href="contact.html" class="block hover:text-yellow-300">📍 Location</a>
+  </nav>
 
-    <!-- Main Content -->
-    <main class="flex-1 ml-64 px-4 py-10">
+  <!-- Desktop Nav -->
+  <nav class="hidden sm:block container mx-auto mt-6 px-4 space-x-4 text-sm">
+    <a href="index.html" class="hover:text-yellow-300">🏠 Home</a>
+    <a href="carwash.html" class="hover:text-yellow-300">🚗 Car Wash</a>
+    <a href="salon.html" class="hover:text-yellow-300">💇 Salon</a>
+    <a href="menu.html" class="hover:text-yellow-300">🍽️ Restaurant</a>
+    <a href="contact.html" class="hover:text-yellow-300">📍 Location</a>
+  </nav>
 
-      <!-- Ladies Styles -->
-      <section>
-        <h2 class="text-3xl font-bold mb-6 text-salon">Ladies Braids</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <!-- Braid Card -->
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
-            <img src="https://via.placeholder.com/300x200?text=Box+Braids" alt="Box Braids" class="rounded mb-3 w-full object-cover h-48">
-            <h3 class="font-semibold text-lg">Box Braids</h3>
-            <p class="text-salon font-bold">R300</p>
-          </div>
+  <main class="container mx-auto px-4 py-10">
+    <h2 class="text-3xl font-bold mb-6 text-center">We'd love your feedback!</h2>
 
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
-            <img src="braids.jpg" alt="Cornrows" class="rounded mb-3 w-full object-cover h-48">
-            <h3 class="font-semibold text-lg">Cornrows</h3>
-            <p class="text-salon font-bold">R200</p>
-          </div>
+    <!-- Review Form -->
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md max-w-2xl mx-auto mb-10">
+      <form id="reviewForm" class="space-y-4">
+        <div>
+          <label for="service" class="block mb-1 font-semibold">Which service are you reviewing?</label>
+          <select id="service" class="w-full border rounded px-3 py-2 dark:bg-gray-700">
+            <option value="Braai">Braai</option>
+            <option value="Salon">Salon</option>
+            <option value="Carwash">Carwash</option>
+          </select>
+        </div>
 
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
-            <img src="braids.jpg" alt="Knotless Braids" class="rounded mb-3 w-full object-cover h-48">
-            <h3 class="font-semibold text-lg">Knotless Braids</h3>
-            <p class="text-salon font-bold">R350</p>
-          </div>
+        <div>
+          <label for="name" class="block mb-1 font-semibold">Your Name (optional):</label>
+          <input type="text" id="name" class="w-full border rounded px-3 py-2 dark:bg-gray-700" placeholder="e.g., Thabo" />
+        </div>
 
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
-            <img src="braids.jpg" alt="Twist Braids" class="rounded mb-3 w-full object-cover h-48">
-            <h3 class="font-semibold text-lg">Twist Braids</h3>
-            <p class="text-salon font-bold">R280</p>
-          </div>
-
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
-            <img src="braids.jpg" alt="Goddess Braids" class="rounded mb-3 w-full object-cover h-48">
-            <h3 class="font-semibold text-lg">Goddess Braids</h3>
-            <p class="text-salon font-bold">R320</p>
-          </div>
-
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
-            <img src="braids.jpg" alt="Fulani Braids" class="rounded mb-3 w-full object-cover h-48">
-            <h3 class="font-semibold text-lg">Fulani Braids</h3>
-            <p class="text-salon font-bold">R340</p>
+        <div>
+          <label class="block mb-1 font-semibold">Your Rating:</label>
+          <div class="flex space-x-1 text-yellow-400 text-2xl" id="starRating">
+            <button type="button" data-rating="1">☆</button>
+            <button type="button" data-rating="2">☆</button>
+            <button type="button" data-rating="3">☆</button>
+            <button type="button" data-rating="4">☆</button>
+            <button type="button" data-rating="5">☆</button>
           </div>
         </div>
-      </section>
 
-      <!-- Men's Haircuts -->
-      <section class="mt-16">
-        <h2 class="text-3xl font-bold mb-6 text-salon">Men’s Haircuts</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
-          <!-- Haircut Card -->
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
-            <img src="Fade.jpg" alt="Fade Cut" class="rounded mb-3 w-full object-cover h-48">
-            <h3 class="font-semibold text-lg">Fade Cut</h3>
-            <p class="text-salon font-bold">R50</p>
-          </div>
-
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
-            <img src="Fade.jpg" alt="Buzz Cut" class="rounded mb-3 w-full object-cover h-48">
-            <h3 class="font-semibold text-lg">Buzz Cut</h3>
-            <p class="text-salon font-bold">R40</p>
-          </div>
-
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
-            <img src="Fade.jpg" alt="Line Up" class="rounded mb-3 w-full object-cover h-48">
-            <h3 class="font-semibold text-lg">Line Up</h3>
-            <p class="text-salon font-bold">R30</p>
-          </div>
-
-          <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow hover:scale-105 transition-transform">
-            <img src="Fade.jpg" alt="Classic Cut" class="rounded mb-3 w-full object-cover h-48">
-            <h3 class="font-semibold text-lg">Classic Cut</h3>
-            <p class="text-salon font-bold">R60</p>
-          </div>
+        <div>
+          <label for="comment" class="block mb-1 font-semibold">Your Comment:</label>
+          <textarea id="comment" class="w-full border rounded px-3 py-2 dark:bg-gray-700" rows="4" placeholder="Type your feedback..."></textarea>
         </div>
-      </section>
 
-    </main>
-  </div>
+        <button type="submit" class="bg-carwash hover:bg-blue-600 text-white px-4 py-2 rounded">Submit Review</button>
+        <p id="confirmation" class="text-green-600 mt-2 hidden">Thank you for your review!</p>
+      </form>
+    </div>
 
-  <!-- Footer -->
-  <footer class="bg-pink-100 dark:bg-gray-800 text-center py-4 text-sm mt-10 ml-64">
-    &copy; 2025 Uhuru Lifestyle. All rights reserved.
+    <!-- Display Reviews -->
+    <div id="reviews" class="space-y-6 max-w-3xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-4">What others are saying:</h3>
+    </div>
+  </main>
+
+  <footer class="bg-yellow-100 dark:bg-gray-800 text-center py-4 text-sm mt-10">
+    &copy; 2025 Uhuru Lifestyle - Braai • Salon • Carwash
   </footer>
 
+  <script>
+    let selectedRating = 0;
+
+    // Star rating logic
+    document.querySelectorAll("#starRating button").forEach(star => {
+      star.addEventListener("click", () => {
+        selectedRating = parseInt(star.getAttribute("data-rating"));
+        document.querySelectorAll("#starRating button").forEach(s => {
+          s.textContent = parseInt(s.getAttribute("data-rating")) <= selectedRating ? "★" : "☆";
+        });
+      });
+    });
+
+    // Load reviews from localStorage
+    window.addEventListener("DOMContentLoaded", () => {
+      const savedReviews = JSON.parse(localStorage.getItem("reviews")) || [];
+      savedReviews.forEach(renderReview);
+    });
+
+    // Render review function
+    function renderReview({ service, rating, comment, name }) {
+      const reviewsContainer = document.getElementById("reviews");
+      const reviewCard = document.createElement("div");
+      reviewCard.className = "bg-white dark:bg-gray-800 p-4 rounded shadow";
+      reviewCard.innerHTML = `
+        <h4 class="font-bold text-lg mb-1">${service}</h4>
+        <div class="text-yellow-400 mb-2">${"★".repeat(rating)}${"☆".repeat(5 - rating)}</div>
+        <p class="text-gray-700 dark:text-gray-300 mb-1">${comment}</p>
+        ${name ? `<p class="text-sm text-gray-500">— ${name}</p>` : ""}
+      `;
+      reviewsContainer.appendChild(reviewCard);
+    }
+
+    // Handle form submission
+    document.getElementById("reviewForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const service = document.getElementById("service").value;
+      const name = document.getElementById("name").value;
+      const comment = document.getElementById("comment").value;
+
+      if (!selectedRating || !comment.trim()) {
+        alert("Please provide a rating and a comment.");
+        return;
+      }
+
+      const review = {
+        service,
+        rating: selectedRating,
+        comment,
+        name: name.trim()
+      };
+
+      renderReview(review);
+
+      // Save to localStorage
+      const saved = JSON.parse(localStorage.getItem("reviews")) || [];
+      saved.push(review);
+      localStorage.setItem("reviews", JSON.stringify(saved));
+
+      // Show confirmation
+      const confirmation = document.getElementById("confirmation");
+      confirmation.classList.remove("hidden");
+      setTimeout(() => confirmation.classList.add("hidden"), 3000);
+
+      // Reset form
+      selectedRating = 0;
+      document.querySelectorAll("#starRating button").forEach(s => s.textContent = "☆");
+      document.getElementById("reviewForm").reset();
+    });
+  </script>
 </body>
 </html>
